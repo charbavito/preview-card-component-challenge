@@ -34,10 +34,11 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   max-width: 120em;
-  min-width: 100em;
+  min-width: 110em;
   justify-content: center;
 }
 .container .card .content {
+  transition: all 1000ms;
   border-radius: 1em 0 0 1em;
   width: 48%;
   height: auto;
@@ -83,9 +84,12 @@ body {
   filter: saturate(150%);
   align-self: center;
 }
-.container .card .main-img .img {
+.container .card .main-img .img-desktop {
   align-self: center;
   border-radius: 0 1em 1em 0;
+}
+.container .card .main-img .img-mobile {
+  display: none;
 }
 .container .card .main-img .overlay {
   align-self: center;
@@ -97,6 +101,59 @@ body {
   background-color: #aa5cdb;
   filter: opacity(0.5) brightness(70%) saturate(130%);
 }
+@media (max-width: 69em) {
+  .container .card {
+    border-radius: 0;
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+  .container .card .content {
+    transition: all 1000ms;
+    border-radius: 0 0 1em 1em;
+    align-self: center;
+    width: 35em;
+    padding: 4em 4em 3em 4em;
+  }
+  .container .card .content .data {
+    flex-direction: column;
+    padding-top: 0;
+  }
+  .container .card .content .data h2 {
+    padding-top: 1em;
+  }
+  .container .card .content h1 {
+    font-size: 2.75em;
+  }
+  .container .card .content p {
+    padding-top: 1em;
+  }
+  .container .card .main-img {
+    border-radius: 1em 1em 0 0;
+  }
+  .container .card .main-img .img-desktop {
+    display: none;
+  }
+  .container .card .main-img .img-mobile {
+    display: block;
+    border-radius: 1em 1em 0 0;
+    width: 35em;
+    height: 100%;
+  }
+  .container .card .main-img .overlay {
+    border-radius: 1em 1em 0 0;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    width: 35em;
+  }
+}
 
 .footer {
   word-spacing: 0.1em;
@@ -104,7 +161,7 @@ body {
   color: rgba(255, 255, 255, 0.7490196078);
   white-space: pre;
   display: flex;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
