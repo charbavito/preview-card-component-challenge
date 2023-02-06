@@ -6,7 +6,7 @@
 
 <div align='center'>
     <h2>
-      <a href='#'> Live Version at Versel </a>
+      <a href='https://preview-card-component-challenge.vercel.app/'> Live Version at Versel </a>
     </h2>
 </div>
 
